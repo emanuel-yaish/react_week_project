@@ -1,0 +1,7 @@
+.profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80vw;
+  gap: 10vw;
+  padding-top: 10rem;
+}

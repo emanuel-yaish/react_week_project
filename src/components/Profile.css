@@ -1,0 +1,54 @@
+.profile {
+  display: flex;
+  background-color: var(--profile-color);
+  box-shadow: 0.2rem 0.4rem 0.8rem black;
+}
+
+.profile-image {
+  width: 12vw;
+  height: 100%;
+  transform: translate(-5rem, -2rem);
+  box-shadow: 0.2rem 0.4rem 0.8rem black;
+}
+
+.profile-container {
+  padding: 2rem 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info-container,
+.profile-hobbies-container {
+  display: flex;
+}
+
+.profile-info-container div,
+.profile-hobbies-container div {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.profile-user-name {
+  transform: translateX(-6rem);
+  font-size: 5rem;
+  text-shadow: 2px 2px black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-first-name {
+  transform: translateX(-2rem);
+}
+
+.profile-about {
+  font-size: 1.5rem;
+  max-width: 70%;
+}
+
+.profile-about-label {
+  text-transform: uppercase;
+  color: var(--pink);
+  text-shadow: 2px 2px black;
+  margin-bottom: 0.5rem;
+}

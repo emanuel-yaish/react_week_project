@@ -1,0 +1,7 @@
+.profiles-page {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  color: var(--profile-text);
+  background-color: var(--profiles-page);
+}

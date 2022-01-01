@@ -1,0 +1,26 @@
+/* Colors */
+
+:root {
+  --pink: #f4f4f4;
+  --link: #eadede;
+  --nav-color: #0399d8;
+  --profiles-page: #781c68;
+  --profile-color: #9a0680;
+  --profile-text: #fff5e1;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Elements */
+html {
+  font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+}
+
+.App {
+  width: 100vw;
+}
