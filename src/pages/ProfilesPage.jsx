@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/Nav";
+// import Nav from "../components/Nav";
 import Profiles from "../components/Profiles";
 import "./ProfilesPage.css";
 
