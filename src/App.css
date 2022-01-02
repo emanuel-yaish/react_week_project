@@ -1,12 +1,16 @@
 /* Colors */
 
 :root {
-  --pink: #f4f4f4;
-  --link: #eadede;
+  --pink: #ed6663;
+  --link: #e9dddd;
+  --gray: gray;
   --nav-color: #0399d8;
   --profiles-page: #781c68;
-  --profile-color: #9a0680;
-  --profile-text: #fff5e1;
+  --profile-color: #4e89ae;
+  --profile-text: #ffa372;
+  --step-button: #ff0220;
+  --step-button-background: #ff829146;
+  --form-color: #ffffff;
 }
 
 /* CSS Reset */

@@ -1,3 +1,5 @@
+import "./CostumInput.css";
+
 const CostumInput = ({
   onInputChangeCallBack,
   value,
@@ -7,14 +9,18 @@ const CostumInput = ({
   id,
 }) => {
   return (
-    <div>
-      <label htmlFor={id}>{label} </label>
+    <div className="costum-input-container">
+      <label className="costum-input-label" htmlFor={id}>
+        {value === "" ? " " : label}
+      </label>
       <input
+        className="costum-input"
         id={id}
         type={type}
         name={name}
         value={value}
         onChange={onInputChangeCallBack}
+        placeholder={label}
       />
     </div>
   );
