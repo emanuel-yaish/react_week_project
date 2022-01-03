@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProfilesApi from "../api/ProfilesApi";
 import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
 import StepsNav from "../components/StepsNav";
@@ -35,7 +36,17 @@ function NewProfilePage(props) {
     setuserInput({ ...userInput, [name]: value });
   };
 
-  const createNewProfile = () => {};
+  const createNewProfile = async (e) => {
+    e.preventDefault();
+    try {
+      const resp = await ProfilesApi.post("/profiles", userInput);
+      console.log(resp.data);
+      window.location.href = "/profiles";
+    } catch (err) {
+      // Handle Error Here
+      console.error(err);
+    }
+  };
 
   return (
     <div className="new-profile-page">
