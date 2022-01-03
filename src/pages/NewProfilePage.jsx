@@ -3,17 +3,19 @@ import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
 import StepsNav from "../components/StepsNav";
 
-import "./NewUserPage.css";
+import "./NewProfilePage.css";
 
-function NewUserPage(props) {
-  const steps = ["Personal Info", "Preferences"];
+function NewProfilePage(props) {
+  const steps = ["PersonalInfo", "Preferences"];
   const formFileds = [{ fildNamge: { type: "text", name: "userName" } }];
   console.log(formFileds);
 
+  const [currentFormType, setCurrentFormType] = useState(steps[0]);
   const [selected, setSelected] = useState([]);
   const [userInput, setuserInput] = useState({
     avatar: "",
     name: "",
+    gender: "",
     birthDay: "",
     location: "",
     height: "",
@@ -22,6 +24,10 @@ function NewUserPage(props) {
     about: "",
   });
 
+  const handleFormTypeChange = (formType) => {
+    setCurrentFormType(formType);
+  };
+
   const handleInputChange = (e) => {
     console.log(e);
     const { name, value } = e.target;
@@ -29,8 +35,10 @@ function NewUserPage(props) {
     setuserInput({ ...userInput, [name]: value });
   };
 
+  const createNewProfile = () => {};
+
   return (
-    <div className="new-user-page">
+    <div className="new-profile-page">
       <div className="form-container">
         <div className="new-user-header">
           <h2 className="form-title">
@@ -38,22 +46,35 @@ function NewUserPage(props) {
           </h2>
           <p className="form-intro">Let's create your profile.</p>
         </div>
-        <StepsNav steps={steps} />
+        <StepsNav
+          formTypeChangeCallback={handleFormTypeChange}
+          steps={steps}
+          currentFormType={currentFormType}
+        />
 
         <form className="new-user-form">
           <div className="form-instruction-container">
             <p className="form-instruction">Enter your details below.</p>
           </div>
-          <PersonalInfo
-            userInput={userInput}
-            handleInputChange={handleInputChange}
-            selected={selected}
-            setSelected={setSelected}
-          />
-          <Preferences />
-          <div className="form-buttons-container">
-            <button className="form-button">Prev</button>
-            <button className="form-button">Next</button>
+
+          {currentFormType === steps[0] ? (
+            <PersonalInfo
+              userInput={userInput}
+              handleInputChange={handleInputChange}
+              selected={selected}
+              setSelected={setSelected}
+            />
+          ) : (
+            <Preferences
+              userInput={userInput}
+              handleInputChange={handleInputChange}
+            />
+          )}
+
+          <div className="form-button-container">
+            <button onClick={createNewProfile} className="form-button">
+              Create Profile
+            </button>
           </div>
         </form>
       </div>
@@ -61,4 +82,4 @@ function NewUserPage(props) {
   );
 }
 
-export default NewUserPage;
+export default NewProfilePage;

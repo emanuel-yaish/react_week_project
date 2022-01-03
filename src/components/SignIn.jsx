@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function SignIn(props) {
   return (
     <div className="sign-in">
-      <Link to="/newuser">SignIn</Link>
+      <Link to="/profiles">Sign In</Link>
     </div>
   );
 }

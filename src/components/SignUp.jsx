@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function LogIn(props) {
+function SignUp(props) {
   return (
     <div className="log-in">
-      <Link to="/profiles">Login</Link>
+      <Link to="/newprofile">Sign Up</Link>
     </div>
   );
 }
 
-export default LogIn;
+export default SignUp;

@@ -11,6 +11,8 @@
   --step-button: #ff0220;
   --step-button-background: #ff829146;
   --form-color: #ffffff;
+  --heart-active-color: #e44;
+  --heart-inactive-color: #bdbdbd;
 }
 
 /* CSS Reset */
@@ -23,6 +25,10 @@
 /* Elements */
 html {
   font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .App {
