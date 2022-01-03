@@ -22,8 +22,8 @@ function TextArea({
         name={name}
         onChange={onInputChangeCallBack}
         rows={rows}
-        // cols={cols}
-        // value={value}
+        cols={cols}
+        value={value}
       />
     </div>
   );

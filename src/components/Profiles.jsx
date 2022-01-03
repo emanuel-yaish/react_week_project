@@ -18,7 +18,15 @@ function Profiles(props) {
     getProfiles();
   }, []);
 
-  if (!profiles) return "Loading profiles";
+  if (!profiles)
+    return (
+      <div className="loding-profiles">
+        <h2>Loading Profiles</h2>
+        <div class="lds-heart">
+          <div></div>
+        </div>
+      </div>
+    );
   console.log("profiles", profiles);
   return (
     <div className="profiles">

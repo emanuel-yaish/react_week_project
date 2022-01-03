@@ -72,7 +72,7 @@ function PersonalInfo({ userInput, handleInputChange, selected, setSelected }) {
         id="about-input"
         value={userInput.about}
         onInputChangeCallBack={handleInputChange}
-        cols={50}
+        cols={""}
         rows={5}
       />
     </div>

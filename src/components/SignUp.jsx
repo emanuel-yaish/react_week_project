@@ -1,10 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import CostumInput from "./CostumInput";
 
-function SignUp(props) {
+function SignUp({ userInput, handleInputChange }) {
   return (
     <div className="log-in">
-      <Link to="/newprofile">Sign Up</Link>
+      <CostumInput
+        onInputChangeCallBack={handleInputChange}
+        label="Email"
+        type="text"
+        name="email"
+        value={userInput.email}
+        id="email-input"
+      />
+      <CostumInput
+        onInputChangeCallBack={handleInputChange}
+        label="Password"
+        type="password"
+        name="password"
+        value={userInput.password}
+        id="password-input"
+      />
+      <CostumInput
+        onInputChangeCallBack={handleInputChange}
+        label="Confirm Password"
+        type="confirm"
+        name="confirm"
+        value={userInput.confirm}
+        id="confirm-input"
+      />
     </div>
   );
 }
