@@ -2,7 +2,6 @@ import React from "react";
 import "./Profile.css";
 
 function Profile(props) {
-  console.log("props", props);
   const { avatar, name, birthDay, location, height, status, hobbies, about } =
     props.profile;
 
