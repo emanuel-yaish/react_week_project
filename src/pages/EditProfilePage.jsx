@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ProfilesApi from "../api/ProfilesApi";
 import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
 import StepsNav from "../components/StepsNav";
+import "./EditProfilePage.css";
 
-import "./NewProfilePage.css";
-
-function NewProfilePage(props) {
+function EditProfilePage(props) {
+  const params = useParams();
   const steps = ["PersonalInfo", "Preferences"];
-  // const formFileds = [{ fildNamge: { type: "text", name: "userName" } }];
-  // console.log(formFileds);
-
   const [currentFormType, setCurrentFormType] = useState(steps[0]);
   const [selected, setSelected] = useState([]);
   const [userInput, setuserInput] = useState({
@@ -24,6 +22,18 @@ function NewProfilePage(props) {
     hobbies: "",
     about: "",
   });
+
+  useEffect(() => {
+    const getProfile = async () => {
+      try {
+        const response = await ProfilesApi.get(`/profiles/${params.userID}`);
+        setuserInput(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getProfile();
+  }, [params.userID]);
 
   const handleFormTypeChange = (formType) => {
     setCurrentFormType(formType);
@@ -39,7 +49,10 @@ function NewProfilePage(props) {
   const createNewProfile = async (e) => {
     e.preventDefault();
     try {
-      const resp = await ProfilesApi.post("/profiles", userInput);
+      const resp = await ProfilesApi.put(
+        `/profiles/${params.userID}`,
+        userInput
+      );
       console.log(resp.data);
       window.location.href = "/profiles";
     } catch (err) {
@@ -47,9 +60,8 @@ function NewProfilePage(props) {
       console.error(err);
     }
   };
-
   return (
-    <div className="new-profile-page">
+    <div className="edit-profile-page">
       <div className="form-container">
         <div className="new-user-header">
           <h2 className="form-title">
@@ -84,7 +96,7 @@ function NewProfilePage(props) {
 
           <div className="form-button-container">
             <button onClick={createNewProfile} className="form-button">
-              Create Profile
+              Update Profile
             </button>
           </div>
         </form>
@@ -93,4 +105,4 @@ function NewProfilePage(props) {
   );
 }
 
-export default NewProfilePage;
+export default EditProfilePage;
