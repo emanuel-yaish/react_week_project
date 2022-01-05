@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProfilesApi from "../api/ProfilesApi";
-import PersonalInfo from "../components/PersonalInfo";
+// import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
 import StepsNav from "../components/StepsNav";
 import "./EditProfilePage.css";
@@ -11,7 +11,7 @@ function EditProfilePage(props) {
   const params = useParams();
   const steps = ["PersonalInfo", "Preferences"];
   const [currentFormType, setCurrentFormType] = useState(steps[0]);
-  const [selected, setSelected] = useState([]);
+  // const [selected, setSelected] = useState([]);
   const [userInput, setuserInput] = useState({
     avatar: "",
     name: "",
