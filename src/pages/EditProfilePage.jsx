@@ -7,6 +7,7 @@ import StepsNav from "../components/StepsNav";
 import "./EditProfilePage.css";
 
 function EditProfilePage(props) {
+  console.log(props);
   const params = useParams();
   const steps = ["PersonalInfo", "Preferences"];
   const [currentFormType, setCurrentFormType] = useState(steps[0]);
