@@ -7,7 +7,7 @@ function RadioButtons({ mainLabel, options, onInputChangeCallBack }) {
       <label className="radio-buttons-main-label">{mainLabel}</label>
       <div className="radio-buttons-container">
         {options.map((option) => (
-          <React.Fragment key={option}>
+          <div key={option}>
             <input
               onChange={onInputChangeCallBack}
               className="radio-buttons-input"
@@ -19,7 +19,7 @@ function RadioButtons({ mainLabel, options, onInputChangeCallBack }) {
             <label className="radio-buttons-label" htmlFor={option}>
               {option}
             </label>
-          </React.Fragment>
+          </div>
         ))}
       </div>
     </div>

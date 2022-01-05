@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ProfilesApi from "../api/ProfilesApi";
 import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
@@ -7,6 +7,7 @@ import StepsNav from "../components/StepsNav";
 import "./EditProfilePage.css";
 
 function EditProfilePage(props) {
+  let navigate = useNavigate();
   console.log(props);
   const params = useParams();
   const steps = ["PersonalInfo", "Preferences"];
@@ -47,7 +48,7 @@ function EditProfilePage(props) {
     setuserInput({ ...userInput, [name]: value });
   };
 
-  const createNewProfile = async (e) => {
+  const updateProfile = async (e) => {
     e.preventDefault();
     try {
       const resp = await ProfilesApi.put(
@@ -55,7 +56,7 @@ function EditProfilePage(props) {
         userInput
       );
       console.log(resp.data);
-      window.location.href = "/profiles";
+      navigate("/profiles");
     } catch (err) {
       // Handle Error Here
       console.error(err);
@@ -96,7 +97,7 @@ function EditProfilePage(props) {
           )}
 
           <div className="form-button-container">
-            <button onClick={createNewProfile} className="form-button">
+            <button onClick={updateProfile} className="form-button">
               Update Profile
             </button>
           </div>

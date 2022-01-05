@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import StepsNav from "../components/StepsNav";
 import SignUp from "../components/SignUp";
 import SignIn from "../components/SignIn";
 import "./SignPage.css";
 
 function SignPage(props) {
+  let navigate = useNavigate();
   console.log(props);
   const steps = ["SignIn", "SignUp"];
 
@@ -29,8 +30,8 @@ function SignPage(props) {
     e.preventDefault();
 
     currentFormType === steps[0]
-      ? (window.location.href = "/profiles")
-      : (window.location.href = "/newprofile");
+      ? navigate("/profiles")
+      : navigate("/newprofile");
   };
 
   return (

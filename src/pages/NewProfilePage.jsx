@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ProfilesApi from "../api/ProfilesApi";
 import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
@@ -7,15 +8,14 @@ import StepsNav from "../components/StepsNav";
 import "./NewProfilePage.css";
 
 function NewProfilePage(props) {
-  console.log(props);
+  let navigate = useNavigate();
   const steps = ["PersonalInfo", "Preferences"];
   // const formFileds = [{ fildNamge: { type: "text", name: "userName" } }];
   // console.log(formFileds);
 
   const [currentFormType, setCurrentFormType] = useState(steps[0]);
   const [selected, setSelected] = useState([]);
-  setSelected([1]);
-  console.log(selected);
+
   const [userInput, setuserInput] = useState({
     avatar: "",
     name: "",
@@ -41,10 +41,11 @@ function NewProfilePage(props) {
 
   const createNewProfile = async (e) => {
     e.preventDefault();
+
     try {
       const resp = await ProfilesApi.post("/profiles", userInput);
       console.log(resp.data);
-      window.location.href = "/profiles";
+      navigate("/profiles");
     } catch (err) {
       // Handle Error Here
       console.error(err);
@@ -86,7 +87,10 @@ function NewProfilePage(props) {
           )}
 
           <div className="form-button-container">
-            <button onClick={createNewProfile} className="form-button">
+            <button
+              onClick={(e) => createNewProfile(e)}
+              className="form-button"
+            >
               Create Profile
             </button>
           </div>
