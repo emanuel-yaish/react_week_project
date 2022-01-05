@@ -1,19 +1,18 @@
 import React from "react";
 import CostumInput from "../components/CostumInput";
 // import RadioButtons from "./RadioButtons";
-// import { MultiSelect } from "react-multi-select-component";
-// import TextArea from "../components/TextArea";
+import { MultiSelect } from "react-multi-select-component";
+import TextArea from "../components/TextArea";
 
-function PersonalInfo({ userInput, handleInputChange }) {
-  // , selected, setSelected
+function PersonalInfo({ userInput, handleInputChange, selected, setSelected }) {
   // const gender = ["Male", "Female"];
-  //   const status = ["Single", "Divorced"];
-  //   const yesNoQuestion = ["Yes", "No"];
-  // const options = [
-  //   { label: "Grapes 🍇", value: "grapes" },
-  //   { label: "Mango 🥭", value: "mango" },
-  //   { label: "Strawberry 🍓", value: "strawberry", disabled: true },
-  // ];
+  // const status = ["Single", "Divorced"];
+  // const yesNoQuestion = ["Yes", "No"];
+  const options = [
+    { label: "Grapes 🍇", value: "grapes" },
+    { label: "Mango 🥭", value: "mango" },
+    { label: "Strawberry 🍓", value: "strawberry", disabled: true },
+  ];
   return (
     <div className="personal-info">
       <CostumInput
@@ -61,13 +60,13 @@ function PersonalInfo({ userInput, handleInputChange }) {
         value={userInput.status}
         id="status-input"
       />
-      {/* <MultiSelect
+      <MultiSelect
         options={options}
         value={selected}
         onChange={setSelected}
         labelledBy="Select"
-      /> */}
-      {/* <TextArea
+      />
+      <TextArea
         label="About"
         name="about"
         id="about-input"
@@ -75,7 +74,7 @@ function PersonalInfo({ userInput, handleInputChange }) {
         onInputChangeCallBack={handleInputChange}
         cols={40}
         rows={5}
-      /> */}
+      />
     </div>
   );
 }

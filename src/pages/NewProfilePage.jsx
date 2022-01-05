@@ -75,8 +75,8 @@ function NewProfilePage(props) {
             <PersonalInfo
               userInput={userInput}
               handleInputChange={handleInputChange}
-              // selected={selected}
-              // setSelected={setSelected}
+              selected={selected}
+              setSelected={setSelected}
             />
           ) : (
             <Preferences

@@ -11,7 +11,7 @@ function EditProfilePage(props) {
   const params = useParams();
   const steps = ["PersonalInfo", "Preferences"];
   const [currentFormType, setCurrentFormType] = useState(steps[0]);
-  // const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState([]);
   const [userInput, setuserInput] = useState({
     avatar: "",
     name: "",
@@ -85,8 +85,8 @@ function EditProfilePage(props) {
             <PersonalInfo
               userInput={userInput}
               handleInputChange={handleInputChange}
-              // selected={selected}
-              // setSelected={setSelected}
+              selected={selected}
+              setSelected={setSelected}
             />
           ) : (
             <Preferences
