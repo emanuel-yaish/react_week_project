@@ -15,8 +15,8 @@
   margin-left: 0.8rem;
 }
 
-/* .radio-buttons-input[type="radio"] {
-  appearance: none;
+.radio-buttons-input[type="radio"] {
+  /* appearance: none; */
   width: 1.4rem;
   height: 1.4rem;
   margin: calc(0 1.4rem / 2);
@@ -27,7 +27,7 @@
   border-radius: 50%;
   transform: rotate(45deg) scale(1);
   will-change: transform;
-} */
+}
 
 .radio-buttons-input[type="radio"]:checked {
   border-radius: 50% 50% 0 50%;
