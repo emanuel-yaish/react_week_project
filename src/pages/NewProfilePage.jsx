@@ -13,7 +13,9 @@ function NewProfilePage(props) {
   // console.log(formFileds);
 
   const [currentFormType, setCurrentFormType] = useState(steps[0]);
-  // const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState([]);
+  setSelected([1]);
+  console.log(selected);
   const [userInput, setuserInput] = useState({
     avatar: "",
     name: "",
