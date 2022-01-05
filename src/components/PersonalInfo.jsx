@@ -6,7 +6,7 @@ import TextArea from "../components/TextArea";
 
 function PersonalInfo({ userInput, handleInputChange }) {
   // , selected, setSelected
-  // const gender = ["Male", "Female"];
+  const gender = ["Male", "Female"];
   //   const status = ["Single", "Divorced"];
   //   const yesNoQuestion = ["Yes", "No"];
   // const options = [
