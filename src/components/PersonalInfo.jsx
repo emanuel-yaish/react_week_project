@@ -2,7 +2,7 @@ import React from "react";
 import CostumInput from "../components/CostumInput";
 import RadioButtons from "./RadioButtons";
 // import { MultiSelect } from "react-multi-select-component";
-import TextArea from "../components/TextArea";
+// import TextArea from "../components/TextArea";
 
 function PersonalInfo({ userInput, handleInputChange }) {
   // , selected, setSelected
@@ -67,7 +67,7 @@ function PersonalInfo({ userInput, handleInputChange }) {
         onChange={setSelected}
         labelledBy="Select"
       /> */}
-      <TextArea
+      {/* <TextArea
         label="About"
         name="about"
         id="about-input"
@@ -75,7 +75,7 @@ function PersonalInfo({ userInput, handleInputChange }) {
         onInputChangeCallBack={handleInputChange}
         cols={40}
         rows={5}
-      />
+      /> */}
     </div>
   );
 }
