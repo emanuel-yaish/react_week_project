@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SignPage from "./pages/SignPage";
-import NewProfilePage from "./pages/NewProfilePage";
+// import NewProfilePage from "./pages/NewProfilePage";
 import EditProfilePage from "./pages/EditProfilePage";
 import DeleteUserPage from "./pages/DeleteUserPage";
 import ProfilesPage from "./pages/ProfilesPage";
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signpage" element={<SignPage />} />
-        <Route path="/newprofile" element={<NewProfilePage />} />
+        {/* <Route path="/newprofile" element={<NewProfilePage />} /> */}
         <Route path="/editprofile/:userID" element={<EditProfilePage />} />
         <Route path="/deleteuser" element={<DeleteUserPage />} />
         <Route path="/profiles" element={<ProfilesPage />} />

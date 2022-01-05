@@ -23,7 +23,7 @@ function Profiles(props) {
     return (
       <div className="loding-profiles">
         <h2>Loading Profiles</h2>
-        <div class="lds-heart">
+        <div className="lds-heart">
           <div></div>
         </div>
       </div>
