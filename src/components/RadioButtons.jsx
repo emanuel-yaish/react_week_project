@@ -1,7 +1,9 @@
 import React from "react";
 import "./RadioButtons.css";
 
-function RadioButtons({ mainLabel, options, onInputChangeCallBack }) {
+function RadioButtons(props) {
+  // const { mainLabel, options, onInputChangeCallBack } = props;
+  const { mainLabel } = props;
   return (
     <div className="radio-buttons">
       <label className="radio-buttons-main-label">{mainLabel}</label>
