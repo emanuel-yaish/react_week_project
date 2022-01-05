@@ -1,5 +1,6 @@
 .new-profile-page {
   min-height: 100vh;
+  padding: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
