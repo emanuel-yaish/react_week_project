@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProfilesApi from "../api/ProfilesApi";
-// import PersonalInfo from "../components/PersonalInfo";
+import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
 import StepsNav from "../components/StepsNav";
 import "./EditProfilePage.css";
@@ -82,13 +82,12 @@ function EditProfilePage(props) {
           </div>
 
           {currentFormType === steps[0] ? (
-            // <PersonalInfo
-            //   userInput={userInput}
-            //   handleInputChange={handleInputChange}
-            //   selected={selected}
-            //   setSelected={setSelected}
-            // />
-            ""
+            <PersonalInfo
+              userInput={userInput}
+              handleInputChange={handleInputChange}
+              // selected={selected}
+              // setSelected={setSelected}
+            />
           ) : (
             <Preferences
               userInput={userInput}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProfilesApi from "../api/ProfilesApi";
-// import PersonalInfo from "../components/PersonalInfo";
+import PersonalInfo from "../components/PersonalInfo";
 import Preferences from "../components/Preferences";
 import StepsNav from "../components/StepsNav";
 
@@ -70,13 +70,12 @@ function NewProfilePage(props) {
           </div>
 
           {currentFormType === steps[0] ? (
-            // <PersonalInfo
-            //   userInput={userInput}
-            //   handleInputChange={handleInputChange}
-            //   selected={selected}
-            //   setSelected={setSelected}
-            // />
-            ""
+            <PersonalInfo
+              userInput={userInput}
+              handleInputChange={handleInputChange}
+              // selected={selected}
+              // setSelected={setSelected}
+            />
           ) : (
             <Preferences
               userInput={userInput}
