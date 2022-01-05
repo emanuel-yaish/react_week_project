@@ -2,13 +2,13 @@ import React from "react";
 // import "./RadioButtons.css";
 
 function RadioButtons(props) {
-  // const { mainLabel, options, onInputChangeCallBack } = props;
-  const { mainLabel } = props;
+  const { mainLabel, options, onInputChangeCallBack } = props;
+
   return (
     <div className="radio-buttons">
       <label className="radio-buttons-main-label">{mainLabel}</label>
       <div className="radio-buttons-container">
-        {/* {options.map((option) => (
+        {options.map((option) => (
           <React.Fragment key={option}>
             <input
               onChange={onInputChangeCallBack}
@@ -22,7 +22,7 @@ function RadioButtons(props) {
               {option}
             </label>
           </React.Fragment>
-        ))} */}
+        ))}
       </div>
     </div>
   );
