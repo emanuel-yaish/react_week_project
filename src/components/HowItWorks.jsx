@@ -67,7 +67,7 @@ function HowItWorks(props) {
           </div>
           <h3 className="how-it-works-select-title">2. Start Dating</h3>
           <div className="header-link-container select-background">
-            <NavLink className="header-link" to="/signpage">
+            <NavLink className="header-link" to="/events">
               <img
                 className="header-link-image"
                 src={speedDate}
@@ -75,7 +75,7 @@ function HowItWorks(props) {
               />
               <div className="header-link-text">Speed Date</div>
             </NavLink>
-            <NavLink className="header-link" to="/signpage">
+            <NavLink className="header-link" to="/events">
               <img
                 className="header-link-image"
                 src={tripDate}
@@ -83,7 +83,7 @@ function HowItWorks(props) {
               />
               <div className="header-link-text">Trip Date</div>
             </NavLink>
-            <NavLink className="header-link" to="/signpage">
+            <NavLink className="header-link" to="/events">
               <img
                 className="header-link-image"
                 src={partyDate}
