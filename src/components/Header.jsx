@@ -6,6 +6,7 @@ import videoDate from "../assets/images/conference-video-call.svg";
 import "./Header.css";
 
 function Header(props) {
+  console.log(props);
   return (
     <div className="header">
       <div className="header-intro">

@@ -11,6 +11,7 @@ import partyDate from "../assets/images/concert.svg";
 import "./HowItWorks.css";
 
 function HowItWorks(props) {
+  console.log(props);
   return (
     <div className="how-it-works">
       <h2 className="how-it-works-title">How It Works</h2>

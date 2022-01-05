@@ -4,6 +4,7 @@ import Profile from "./Profile";
 import "./Profiles.css";
 
 function Profiles(props) {
+  console.log(props);
   const [profiles, setProfiles] = useState();
   useEffect(() => {
     const getProfiles = async () => {

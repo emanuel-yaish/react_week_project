@@ -6,6 +6,7 @@ import SignIn from "../components/SignIn";
 import "./SignPage.css";
 
 function SignPage(props) {
+  console.log(props);
   const steps = ["SignIn", "SignUp"];
 
   const [currentFormType, setCurrentFormType] = useState(steps[0]);

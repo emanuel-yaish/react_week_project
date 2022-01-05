@@ -4,6 +4,7 @@ import Profiles from "../components/Profiles";
 import "./ProfilesPage.css";
 
 function ProfilesPage(props) {
+  console.log(props);
   return (
     <div className="profiles-page">
       <Profiles />

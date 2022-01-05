@@ -7,6 +7,7 @@ import StepsNav from "../components/StepsNav";
 import "./NewProfilePage.css";
 
 function NewProfilePage(props) {
+  console.log(props);
   const steps = ["PersonalInfo", "Preferences"];
   // const formFileds = [{ fildNamge: { type: "text", name: "userName" } }];
   // console.log(formFileds);
