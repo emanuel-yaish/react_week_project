@@ -30,6 +30,7 @@ function EditProfilePage(props) {
       try {
         const response = await ProfilesApi.get(`/profiles/${params.userID}`);
         setuserInput(response.data);
+        setSelected(response.data.hobbies);
       } catch (err) {
         console.log(err);
       }
@@ -42,18 +43,19 @@ function EditProfilePage(props) {
   };
 
   const handleInputChange = (e) => {
-    console.log(e);
     const { name, value } = e.target;
-    console.log(name, value);
+
     setuserInput({ ...userInput, [name]: value });
   };
 
   const updateProfile = async (e) => {
     e.preventDefault();
     try {
+      const userData = { ...userInput };
+      userData.hobbies = selected;
       const resp = await ProfilesApi.put(
         `/profiles/${params.userID}`,
-        userInput
+        userData
       );
       console.log(resp.data);
       navigate("/profiles");

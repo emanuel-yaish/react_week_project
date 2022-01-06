@@ -33,9 +33,8 @@ function NewProfilePage(props) {
   };
 
   const handleInputChange = (e) => {
-    console.log(e);
     const { name, value } = e.target;
-    console.log(name, value);
+
     setuserInput({ ...userInput, [name]: value });
   };
 
@@ -43,7 +42,9 @@ function NewProfilePage(props) {
     e.preventDefault();
 
     try {
-      const resp = await ProfilesApi.post("/profiles", userInput);
+      const userData = { ...userInput };
+      userData.hobbies = selected;
+      const resp = await ProfilesApi.post("/profiles", userData);
       console.log(resp.data);
       navigate("/profiles");
     } catch (err) {

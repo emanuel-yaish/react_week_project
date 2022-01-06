@@ -9,9 +9,11 @@ function PersonalInfo({ userInput, handleInputChange, selected, setSelected }) {
   // const status = ["Single", "Divorced"];
   // const yesNoQuestion = ["Yes", "No"];
   const options = [
-    { label: "Grapes 🍇", value: "grapes" },
-    { label: "Mango 🥭", value: "mango" },
-    { label: "Strawberry 🍓", value: "strawberry", disabled: true },
+    { label: "Surfing 🏄‍♂️", value: "surfing" },
+    { label: "Reading 📚", value: "reading" },
+    { label: "Hiking 🚶‍♂️", value: "hiking" },
+    { label: "Acting 🎭", value: "acting" },
+    { label: "Singing 🎙", value: "singing" },
   ];
   return (
     <div className="personal-info">
@@ -43,6 +45,14 @@ function PersonalInfo({ userInput, handleInputChange, selected, setSelected }) {
         name="avatar"
         value={userInput.avatar}
         id="avatar-input"
+      />
+      <CostumInput
+        onInputChangeCallBack={handleInputChange}
+        label="Location"
+        type="text"
+        name="location"
+        value={userInput.location}
+        id="location-input"
       />
       <CostumInput
         onInputChangeCallBack={handleInputChange}

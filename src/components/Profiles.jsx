@@ -4,20 +4,29 @@ import Profile from "./Profile";
 import "./Profiles.css";
 
 function Profiles(props) {
-  console.log(props);
+  const [likedProfiles, setLikedProfiles] = useState("");
+  const [dislikedProfiles, setDislikedProfiles] = useState("");
   const [profiles, setProfiles] = useState();
   useEffect(() => {
     const getProfiles = async () => {
       try {
         const response = await ProfilesApi.get("/profiles");
-        console.log(response);
         setProfiles(response.data);
       } catch (err) {
         console.log(err);
       }
     };
     getProfiles();
-  }, []);
+  }, [likedProfiles, dislikedProfiles]);
+
+  const handleLike = (id) => {
+    console.log("likedProfiles", likedProfiles);
+    setDislikedProfiles([...likedProfiles, id]);
+  };
+  const handleUnlike = (id) => {
+    console.log("dislikedProfiles", dislikedProfiles);
+    setLikedProfiles([...dislikedProfiles, id]);
+  };
 
   if (!profiles)
     return (
@@ -28,12 +37,27 @@ function Profiles(props) {
         </div>
       </div>
     );
-  console.log("profiles", profiles);
   return (
     <div className="profiles">
-      {profiles.map((profile) => (
-        <Profile key={profile.id} profile={profile} />
-      ))}
+      {profiles
+        .filter((profile) => {
+          if (
+            likedProfiles.includes(profile.id) ||
+            dislikedProfiles.includes(profile.id)
+          ) {
+            console.log("contain");
+            return false;
+          }
+          return true;
+        })
+        .map((profile) => (
+          <Profile
+            key={profile.id}
+            profile={profile}
+            like={handleLike}
+            dislike={handleUnlike}
+          />
+        ))}
     </div>
   );
 }

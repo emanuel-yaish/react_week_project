@@ -1,6 +1,8 @@
 .profiles-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   max-width: 100%;
   color: var(--profile-text);
   /* background-color: var(--profiles-page); */
@@ -15,4 +17,10 @@
     #ea384d,
     #d31027
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.profiles-page-header {
+  font-size: 7rem;
+  margin-top: 4rem;
+  text-shadow: 0.2rem 0.2rem black;
 }

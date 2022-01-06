@@ -7,7 +7,7 @@ import "./SignPage.css";
 
 function SignPage(props) {
   let navigate = useNavigate();
-  console.log(props);
+
   const steps = ["SignIn", "SignUp"];
 
   const [currentFormType, setCurrentFormType] = useState(steps[0]);

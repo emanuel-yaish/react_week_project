@@ -1,19 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import GhostButton from "./GhostButton";
 import dislikeButton from "../assets/images/disadvantages.svg";
 import likeButton from "../assets/images/advantage.svg";
 import "./Profile.css";
 
 function Profile(props) {
-  const { avatar, name, birthDay, location, height, status, hobbies, about } =
-    props.profile;
+  const {
+    avatar,
+    name,
+    birthDay,
+    location,
+    height,
+    status,
+    hobbies,
+    about,
+    id,
+  } = props.profile;
 
   const [firstName, lastName] = name.split(" ");
   //to do helper function that calculate the age
   function getAge(date) {
-    console.log(date);
-
-    return 18;
+    return 27;
   }
 
   const truncate = (str, max, suffix) =>
@@ -27,10 +35,10 @@ function Profile(props) {
   function getHobbies(hobbiesArray) {
     const fiveHobbies = [];
     for (let index = 0; index < hobbiesArray.length && index < 3; index++) {
-      fiveHobbies.push(hobbiesArray[index]);
+      fiveHobbies.push(hobbiesArray[index].value);
     }
     return fiveHobbies.map((hobby) => (
-      <div key={hobby} className="profile-age">
+      <div key={`${id}${hobby}`} className="profile-age">
         {hobby}
       </div>
     ));
@@ -43,7 +51,9 @@ function Profile(props) {
       </figure>
       <div className="profile-container">
         <div className="profile-more-container">
-          <GhostButton text={"More"} />
+          <Link to={`../editprofile/${id}`}>
+            <GhostButton text={"More"} />
+          </Link>
         </div>
         <div className="profile-user-name-container">
           <h2 className="profile-user-name">
@@ -52,7 +62,7 @@ function Profile(props) {
           </h2>
         </div>
         <div className="profile-info-container">
-          <h4 className="profile-section-label">Info:</h4>
+          <h4 className="profile-section-label">Info</h4>
           <div className="profile-info">
             <div className="profile-info-item">
               <div className="profile-age">{getAge(birthDay)}</div>
@@ -74,19 +84,19 @@ function Profile(props) {
           </div>
         </div>
         <div className="profile-hobbies-container">
-          <h4 className="profile-section-label">Hobbies:</h4>
+          <h4 className="profile-section-label">Hobbies</h4>
           <div className="profile-hobbies">{getHobbies(hobbies)}</div>
         </div>
         <div className="profile-about">
-          <h4 className="profile-section-label">about:</h4>
+          <h4 className="profile-section-label">about</h4>
           <p>{truncate(about, 115, "...")}</p>
         </div>
         <div className="profile-buttons-container">
-          <button className="profile-button">
+          <button onClick={() => props.dislike(id)} className="profile-button">
             <img src={dislikeButton} alt="dislike" />
           </button>
-          <button className="profile-button">
-            <img src={likeButton} alt="dislike" />
+          <button onClick={() => props.like(id)} className="profile-button">
+            <img src={likeButton} alt="like" />
           </button>
         </div>
       </div>
