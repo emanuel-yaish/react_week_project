@@ -3,6 +3,7 @@
 ## About:
 
 At this Project I choose to build a date website ,
+This is only the frontend part, because this is was only the mid course project I continue to build in the finale project at https://github.com/emanuel-yaish/appleseeds_final_project
 This project is a part of Appleseeds Bootcamp written with React and we’ve got only one week to this project.
  
  ## Languages and Tools:
