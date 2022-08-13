@@ -1,4 +1,4 @@
-# react week project
+# React week project
 
 ## About:
 
