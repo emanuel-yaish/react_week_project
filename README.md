@@ -1,4 +1,4 @@
-# react_week_project
+# react week project
 
 ## About:
 
