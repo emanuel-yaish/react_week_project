@@ -3,7 +3,7 @@
 ## About:
 
 At this Project I choose to build a date website ,
- This project is a part of Appleseeds Bootcamp written with React and we get only one week to this project.
+This project is a part of Appleseeds Bootcamp written with React and we’ve got only one week to this project.
  
  ## Languages and Tools:
 <p align="left">
