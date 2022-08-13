@@ -5,8 +5,8 @@ Demo:
 
 https://wizardly-wescoff-73bcd0.netlify.app/
 
-<a href="https://wizardly-wescoff-73bcd0.netlify.app/">
-  <img src="src/assets/images/react-week-project.png" target="_blank">
+<a href="https://wizardly-wescoff-73bcd0.netlify.app/" target="_blank">
+  <img src="src/assets/images/react-week-project.png">
 </a>
 
 
